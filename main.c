@@ -54,12 +54,12 @@ void atm_menu() {
     float amount;
 
     while (1) {
-        printf("\n===== Welcome, %s =====\n", current_user.name);
+        printf("\n Welcome, %s \n", current_user.name);
         printf("1. Check Balance\n");
         printf("2. Deposit\n");
         printf("3. Withdraw\n");
         printf("4. Logout\n");
-        printf("Enter choice: ");
+        printf("Enter choice:\n");
         scanf("%d", &choice);
 
         switch (choice) {
@@ -67,7 +67,7 @@ void atm_menu() {
                 printf(" Your balance is ₹%.2f\n", current_user.balance);
                 break;
             case 2:
-                printf("Enter amount to deposit: ₹");
+                printf("Enter amount to deposit:\n ₹");
                 scanf("%f", &amount);
                 if (amount > 0) {
                     current_user.balance += amount;
@@ -78,7 +78,7 @@ void atm_menu() {
                 }
                 break;
             case 3:
-                printf("Enter amount to withdraw: ₹");
+                printf("Enter amount to withdraw:\n ₹");
                 scanf("%f", &amount);
                 if (amount <= 0) {
                     printf(" Invalid amount.\n");
@@ -105,9 +105,9 @@ int main() {
     printf(" Welcome to Smart ATM Simulator\n");
 
     while (attempts < 3) {
-        printf("Enter Account Number: ");
+        printf("Enter Account Number:\n ");
         scanf("%d", &acc_no);
-        printf("Enter 4-digit PIN: ");
+        printf("Enter 4-digit PIN:\n ");
         scanf("%d", &pin);
 
         if (load_account(acc_no, pin)) {
